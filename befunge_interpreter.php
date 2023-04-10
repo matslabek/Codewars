@@ -176,9 +176,13 @@ function interpret(string $code): string {
                 $pointer[1]--;
                 break;
         }
+       echo $output;
     }
     return $output;
 }
 
+
 //var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"));
-var_dump(interpret(">              v\nv\"Hello world!\"<\n> ,,,,,,,,,,,, @"));
+var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"
+));
+//var_dump(interpret(">              v\nv\"Hello world!\"<\n> ,,,,,,,,,,,, @"));
