@@ -3,6 +3,7 @@ function interpret(string $code): string {
     $stack = [];
     $plane = array_map(fn($row) => str_split($row), explode("\n", $code));
     $pointer = [0, 0]; // We start in top left corner
+    $last_row = count($plane) - 1;
     $possible_directions = ['>', '<', '^', 'v']; // For choosing the random direction
     $direction = '>';
     $symbol = '';
@@ -55,16 +56,16 @@ function interpret(string $code): string {
             case '#':   // Skip the next sign
                 switch ($direction) {
                     case '>':
-                        $pointer[0] += 2;
+                        $pointer[0] += 1;
                         break;
                     case '<':
-                        $pointer[0] -= 2;
+                        $pointer[0] -= 1;
                         break;
                     case 'v':
-                        $pointer[1] += 2;
+                        $pointer[1] += 1;
                         break;
                     case '^':
-                        $pointer[1] -= 2;
+                        $pointer[1] -= 1;
                         break;
                 }
                 break;
@@ -174,6 +175,9 @@ function interpret(string $code): string {
                 break;
             case '^':
                 $pointer[1]--;
+                if ($pointer[1] === -1) {
+                    $pointer[1] = $last_row;
+                }
                 break;
         }
        echo $output;
@@ -183,6 +187,6 @@ function interpret(string $code): string {
 
 
 //var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"));
-var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"
-));
+//var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"));
+var_dump(interpret('7^DN>vA' . "\n" . 'v_#v? v' . "\n" .  '7^<""""' . "\n" . '3  ACGT' . "\n" . '90!""""' . "\n" . '4*:>>>v' . "\n" . '+8^-1,<' . "\n" . '> ,+,@)'));
 //var_dump(interpret(">              v\nv\"Hello world!\"<\n> ,,,,,,,,,,,, @"));
