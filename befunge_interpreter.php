@@ -1,5 +1,6 @@
 <?php
 function interpret(string $code): string {
+    //$code = file_get_contents('example.txt');
     $stack = [];
     $plane = array_map(fn($row) => str_split($row), explode("\n", $code));
     $pointer = [0, 0]; // We start in top left corner
@@ -180,13 +181,26 @@ function interpret(string $code): string {
                 }
                 break;
         }
-       echo $output;
+       //echo $output;
     }
     return $output;
 }
 
 
+
+
+var_dump(interpret("08>:1-:v v *_$.@\n  ^    _$>\:^"));
+//var_dump(interpret(">         v\nv  ,,,,\"Hello\"<\n>48*,\"World!\"v\nv,,,,,,\"!\"dlroW\"<\n>25*,.@"));
 //var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"));
 //var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"));
-var_dump(interpret('7^DN>vA' . "\n" . 'v_#v? v' . "\n" .  '7^<""""' . "\n" . '3  ACGT' . "\n" . '90!""""' . "\n" . '4*:>>>v' . "\n" . '+8^-1,<' . "\n" . '> ,+,@)'));
+/* var_dump(interpret(
+     "v>>>>>v\n" .
+    " 12345 \n" .
+    " ^?^   \n" .
+    "> ? ?^ \n" .
+    " v?v   \n" .
+    " 6789  \n" .
+    " >>>> v\n" .
+    "^    .<"));*/
+//var_dump(interpret('7^DN>vA' . "\n" . 'v_#v? v' . "\n" .  '7^<""""' . "\n" . '3  ACGT' . "\n" . '90!""""' . "\n" . '4*:>>>v' . "\n" . '+8^-1,<' . "\n" . '> ,+,@)'));
 //var_dump(interpret(">              v\nv\"Hello world!\"<\n> ,,,,,,,,,,,, @"));
