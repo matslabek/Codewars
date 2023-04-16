@@ -89,7 +89,7 @@ function interpret(string $code): string {
             case ',':
                 $output .= chr(array_pop($stack)); // Output the matching ASCII char of the integer on the stack
                 break;
-            case '$':
+            case '$': //Discard
                 array_pop($stack);
                 break;
             // Arithmetic operations
@@ -154,7 +154,6 @@ function interpret(string $code): string {
                     $stack[] = 0;
                 }
                 break;
-            //NOT SURE OF THE WAY COORDINATES WORK IN THESE 2 CASEs (count from 0, or 1?)
             case 'p': // Put
                 $y = array_pop($stack);
                 $x = array_pop($stack);
@@ -188,21 +187,7 @@ function interpret(string $code): string {
     return $output;
 }
 
-
-
-
+//Some test cases
 var_dump(interpret("08>:1-:v v *_$.@\n  ^    _$>\:^"));
-//var_dump(interpret(">         v\nv  ,,,,\"Hello\"<\n>48*,\"World!\"v\nv,,,,,,\"!\"dlroW\"<\n>25*,.@"));
-//var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"));
-//var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"));
-/* var_dump(interpret(
-     "v>>>>>v\n" .
-    " 12345 \n" .
-    " ^?^   \n" .
-    "> ? ?^ \n" .
-    " v?v   \n" .
-    " 6789  \n" .
-    " >>>> v\n" .
-    "^    .<"));*/
-//var_dump(interpret('7^DN>vA' . "\n" . 'v_#v? v' . "\n" .  '7^<""""' . "\n" . '3  ACGT' . "\n" . '90!""""' . "\n" . '4*:>>>v' . "\n" . '+8^-1,<' . "\n" . '> ,+,@)'));
-//var_dump(interpret(">              v\nv\"Hello world!\"<\n> ,,,,,,,,,,,, @"));
+var_dump(interpret(">987v>.v\nv456<  :\n>321 ^ _@"));
+var_dump(interpret(">              v\nv\"Hello world!\"<\n> ,,,,,,,,,,,, @"));
