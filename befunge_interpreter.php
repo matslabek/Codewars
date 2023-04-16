@@ -89,6 +89,9 @@ function interpret(string $code): string {
             case ',':
                 $output .= chr(array_pop($stack)); // Output the matching ASCII char of the integer on the stack
                 break;
+            case '$':
+                array_pop($stack);
+                break;
             // Arithmetic operations
             case '+':
                 $sum = array_pop($stack) + array_pop($stack);
