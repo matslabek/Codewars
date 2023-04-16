@@ -184,7 +184,6 @@ function interpret(string $code): string {
                 }
                 break;
         }
-       //echo $output;
     }
     return $output;
 }
