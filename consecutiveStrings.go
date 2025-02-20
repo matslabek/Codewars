@@ -6,22 +6,28 @@ import (
 )
 
 func LongestConsec(strarr []string, k int) string {
-	sort.SliceStable(strarr, func(i, j int) bool { return len(strarr[i]) > len(strarr[j]) })
-	fmt.Println(strarr)
-	result := ""
-	if len(strarr) != 0 {
-		for i := 0; i < k; i++ {
-			result += strarr[i]
-		}
+	l := len(strarr)
+	//handle edge cases
+	if l == 0 || k > l || k <= 0 {
+		return ""
 	}
 
-	return result
+	concatStrings := make([]string, 0)
+	for i := 0; i <= l-k; i++ {
+		cStr := strarr[i]
+		for j := 1; j < k; j++ {
+			cStr += strarr[i+j]
+		}
+		concatStrings = append(concatStrings, cStr)
+	}
+	fmt.Println("Concatenated strings", concatStrings)
+	sort.SliceStable(concatStrings, func(i, j int) bool { return len(concatStrings[i]) > len(concatStrings[j]) })
+	fmt.Println("After sort", concatStrings)
+	return concatStrings[0]
 }
 
-var a = []string{"zone", "abigail", "theta", "form", "libe", "zas"}
-var b = []string{"ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"}
-var c = []string{"owiaxujylentrklctozmymu", "wlwsasphmxx", "wpgozvxxiu"}
+var testCase = []string{"wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"}
 
 func main() {
-	fmt.Println(LongestConsec(c, 2))
+	fmt.Println(LongestConsec(testCase, 2))
 }
