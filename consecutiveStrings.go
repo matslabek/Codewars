@@ -29,5 +29,10 @@ func LongestConsec(strarr []string, k int) string {
 var testCase = []string{"wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"}
 
 func main() {
-	fmt.Println(LongestConsec(testCase, 2))
+	//fmt.Println(LongestConsec(testCase, 2))
+	//fmt.Println(TwoOldestAges([]int{1, 9, 3, 10, 2, 5, 11, 4, 5, 12, 7}))
+	//fmt.Println(sortNumbers([]int{1, 2, 5, 3, 10, 6, 4}))
+	//fmt.Println(Decode("XL"))
+	//fmt.Println(MoveZeros([]int{1, 2, 0, 1, 0, 1, 0, 3, 0, 1}))
+	fmt.Println(Alphanumeric(""))
 }
