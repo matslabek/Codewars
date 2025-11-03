@@ -1,4 +1,5 @@
 <?php
+//https://www.codewars.com/kata/526c7b931666d07889000a3c/train/php
 function interpret(string $code): string {
     //$code = file_get_contents('example.txt');
     $stack = [];

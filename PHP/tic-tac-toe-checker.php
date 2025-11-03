@@ -1,5 +1,5 @@
 <?php
-//https://www.codewars.com/kata/525caa5c1bf619d28c000335
+//https://www.codewars.com/kata/525caa5c1bf619d28c000335/train/php
 function is_solved(array $board): int {
     $sign = $board[1][1];
     //Checking the diagonals

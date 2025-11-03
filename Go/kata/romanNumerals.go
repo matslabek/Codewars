@@ -1,11 +1,11 @@
-package main
+package kata
+
+//https://www.codewars.com/kata/51b6249c4612257ac0000005/train/go
 
 import (
 	"fmt"
 	"strings"
 )
-
-//https://www.codewars.com/kata/51b6249c4612257ac0000005/train/go
 
 // Roman Numerals Decoder
 func Decode(roman string) int {

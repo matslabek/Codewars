@@ -1,5 +1,6 @@
-package main
+package kata
 
+// https://www.codewars.com/kata/525c65e51bf619685c000059/train/go
 func Cakes(recipe map[string]int, available map[string]int) int {
 	if len(recipe) > len(available) {
 		return 0

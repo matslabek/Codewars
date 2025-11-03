@@ -1,0 +1,10 @@
+<?php
+//https://www.codewars.com/kata/51edd51599a189fe7f000015/train/php
+function solution(array $a, array $b): float {
+  $arr_len = count($a);
+  $arr_of_diffs = [];
+  for($i = 0; $i < $arr_len; $i++) {
+    $arr_of_diffs[] = pow($a[$i] - $b[$i], 2);
+  }
+  return array_sum($arr_of_diffs) / $arr_len;
+}

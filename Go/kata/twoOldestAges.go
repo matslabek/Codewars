@@ -1,5 +1,6 @@
-package main
+package kata
 
+// https://www.codewars.com/kata/511f11d355fe575d2c000001/train/go
 // Partition function
 func partition(arr []int, low, high int) ([]int, int) {
 	pivot := arr[high]
