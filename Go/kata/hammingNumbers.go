@@ -1,8 +1,8 @@
 package kata
 
-//https://www.codewars.com/kata/526d84b98f428f14a60008da/train/go
+// https://www.codewars.com/kata/526d84b98f428f14a60008da/train/go
 func Hammer(n int) uint {
-\	if n == 1 {
+	if n == 1 {
 		return 1
 	}
 	hamming := make([]uint, n)
